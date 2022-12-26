@@ -1,0 +1,32 @@
+.header-nav {
+    color: white;
+    z-index: 1;
+}
+
+.header-search {
+    width: 370px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ffffff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    font-weight: 500;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.home-logo {
+    width: 120px;
+}
+
+.nav-btn {
+    width: 104px;
+    background-color: #F9A51A;
+    border-radius: 5px;
+    padding: 10px 29px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}

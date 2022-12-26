@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+.banner-left {
+    padding-left: 135px;
+    padding-right: 180px;
+}
+
+.place-title {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    font-size: 97px;
+}
+
+.place-info {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.transparent-background-img {
+    position: absolute;
+    top: 0;
+}
+
+.booking-btn {
+    width: 161px;
+    height: 48px;
+    background-color: rgba(249, 165, 26, 1);
+    border-radius: 10px;
+    border: none;
+    ;
+}
