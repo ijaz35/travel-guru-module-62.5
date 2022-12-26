@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 
+.home-container {
+    top: 30%;
+}
+
 .banner-left {
     padding-left: 135px;
     padding-right: 180px;

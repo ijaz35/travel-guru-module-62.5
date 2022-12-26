@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+.form-container {
+    font-family: 'Montserrat', sans-serif;
+    width: 60%;
+}
+
+.form-container input {
+    background-color: #F2F2F2;
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+}
+
+.form-container label {
+    color: rgba(129, 129, 129, 1);
+}

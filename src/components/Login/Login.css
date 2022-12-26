@@ -1,0 +1,52 @@
+.login-form-container {
+    position: absolute;
+    left: 30%;
+    font-weight: 500;
+    margin-top: 150px;
+
+
+}
+
+.login-form-inner {
+    height: 500px;
+    border: 1px solid rgba(171, 171, 171, 1);
+    padding: 38px 0;
+    margin-bottom: 50px;
+}
+
+.login-form-container input:not([type=checkbox]) {
+    display: block;
+    border-bottom: 1px solid rgba(197, 197, 197, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.styleDiv {
+    width: 30%;
+    height: 2px;
+    background-color: rgba(170, 170, 170, 1);
+}
+
+.login-form-container input:focus-visible {
+    outline: 0px;
+}
+
+.login-btn-container {
+    padding-bottom: 95px;
+}
+
+.login-btn {
+    border: 1px solid rgba(199, 199, 199, 1);
+    background-color: transparent;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.logo-icon {
+    width: 37px;
+    height: 37px;
+    margin-right: 7em;
+}

@@ -5,10 +5,16 @@ import './Home.css'
 import Slider from '../Slider/Slider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import Header from '../Header/Header';
+
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return (
         <div>
+            <Header></Header>
             <div className='w-100 position-relative '>
                 <img className='img-fluid' src={background} alt="" />
                 <div className='transparent-background-img'>
@@ -16,11 +22,11 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className='position-absolute top-50 row  d-flex w-100'>
+            <div className='home-container position-absolute row  d-flex w-100'>
                 <div className='banner-left col-md-6'>
                     <h1 className='place-title text-white text-uppercase'>cox's bazar</h1>
                     <p className='place-info  text-white py-4'>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                    <button className='booking-btn '>
+                    <button onClick={() => navigate('/booking')} className='booking-btn '>
                         <span className='me-3 '>Booking</span>
                         <FontAwesomeIcon icon={faArrowRight} />
                     </button>
