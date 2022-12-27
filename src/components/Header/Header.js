@@ -11,7 +11,7 @@ const Header = () => {
         <div className='position-relative'>
             <Navbar className='header-nav position-absolute top-0 w-100' expand="lg">
                 <Container className='mx-auto px-5 pt-5 '>
-                    <Navbar.Brand as={Link} to="/" className='' >
+                    <Navbar.Brand as={Link} to="/" >
                         <img className='home-logo  text-white' src={logo} alt="logo" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -21,10 +21,10 @@ const Header = () => {
                             <Nav.Link href="#search">
                                 <input className='header-search rounded-3 text-white' type="search" defaultValue='Search your destination...' />
                             </Nav.Link>
-                            <Nav.Link className='nav-link text-white' href="#news">News</Nav.Link>
-                            <Nav.Link className='text-white' href="#destination">Destination</Nav.Link>
-                            <Nav.Link className='nav-link text-white' href="#blogs">Blogs</Nav.Link>
-                            <Nav.Link className='nav-link text-white' href="#contact">Contact</Nav.Link>
+                            <Nav.Link as={Link} to='/booking' className='nav-link text-white'>News</Nav.Link>
+                            <Nav.Link as={Link} to='/details' className='text-white' href="#destination">Details</Nav.Link>
+
+                            <Nav.Link as={Link} to='/signup' className='nav-link text-white' >Register</Nav.Link>
                             <button onClick={() => navigate('/login')} className='nav-btn'>Login</button>
 
                         </Nav>

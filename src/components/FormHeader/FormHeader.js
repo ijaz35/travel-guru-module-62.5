@@ -17,10 +17,10 @@ const FormHeader = () => {
                     <Navbar.Collapse id="basic-navbar-nav ">
                         <Nav className=" w-50 d-flex align-items-center justify-content-between ms-auto">
 
-                            <Nav.Link className='nav-link text-dark' href="#news">News</Nav.Link>
-                            <Nav.Link className='text-dark' href="#destination">Destination</Nav.Link>
-                            <Nav.Link className='nav-link text-dark' href="#blogs">Blogs</Nav.Link>
-                            <Nav.Link className='nav-link text-dark' href="#contact">Contact</Nav.Link>
+                            <Nav.Link as={Link} to='/booking' className='nav-link text-dark' href="#news">News</Nav.Link>
+                            <Nav.Link as={Link} to='/details' className='text-dark' >Details</Nav.Link>
+
+                            <Nav.Link as={Link} to='/signup' className='nav-link text-dark' >Register</Nav.Link>
                             <button onClick={() => navigate('/login')} className='nav-btn'>Login</button>
 
                         </Nav>
