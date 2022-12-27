@@ -28,9 +28,9 @@ const Header = () => {
                             <Nav.Link as={Link} to='/booking' className='nav-link text-white'>News</Nav.Link>
                             <Nav.Link as={Link} to='/details' className='text-white' href="#destination">Details</Nav.Link>
 
-                            {user?.uid ? <div>
-                                <span><img src={user?.photoURL} alt="" /></span>
-                                <span className='fw-bolder text-info'> {user?.displayName}</span>
+                            {user?.uid ? <div className='d-flex align-items-center'>
+                                <div><img style={{ width: '60%' }} className='rounded-pill me-2' src={user?.photoURL} alt="" /></div>
+                                <div className='fw-bolder text-info'> {user?.displayName}</div>
                                 <button className="ms-5 nav-btn" onClick={() => signOut()}> Signout</button>
                             </div>
                                 :

@@ -11,7 +11,7 @@ const FormHeader = () => {
     const [signOut] = useSignOut(auth);
     const navigate = useNavigate();
     return (
-        <div className='position-relative'>
+        <div className='position-relative mt-4'>
             <Navbar className='header-nav position-absolute top-0 w-100 text-dark' expand="lg">
                 <Container className='mx-auto px-5 pt-3 '>
                     <Navbar.Brand as={Link} to='/'>
@@ -24,8 +24,8 @@ const FormHeader = () => {
                             <Nav.Link as={Link} to='/booking' className='nav-link text-dark' href="#news">News</Nav.Link>
                             <Nav.Link as={Link} to='/details' className='text-dark' >Details</Nav.Link>
 
-                            {user?.uid ? <div>
-                                <span><img src={user?.photoURL} alt="" /></span>
+                            {user?.uid ? <div className='d-flex align-items-center'>
+                                <span><img style={{ width: '60%' }} className='rounded-pill me-0' src={user?.photoURL} alt="" /></span>
                                 <span className='fw-bolder text-danger'> {user?.displayName}</span>
                                 <button className="ms-5 nav-btn" onClick={() => signOut()}> Signout</button>
                             </div>

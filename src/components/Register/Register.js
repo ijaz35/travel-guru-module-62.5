@@ -41,7 +41,7 @@ const Register = () => {
     }
     const handleRegisterFormSubmit = async event => {
         event.preventDefault();
-        const name = event.target.firstName.value + '' + event.target.lastName.value;
+        const name = event.target.firstName.value + ' ' + event.target.lastName.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
