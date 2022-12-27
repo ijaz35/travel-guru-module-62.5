@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import FormHeader from '../FormHeader/FormHeader';
 import facebook from '../../../src/images/icons/fb.png';
 import google from '../../../src/images/icons/google.png';
@@ -11,18 +11,28 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
+
     const emailRef = useRef();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
     const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+
     //google signIn
     const [signInWithGoogle, user1, loading1, error2] = useSignInWithGoogle(auth);
+
     //Facebook signin
     const [signInWithFacebook, user2, loading2, error3] = useSignInWithFacebook(auth);
+
     let errorElement;
+
     if (loading || sending || loading1 || loading2) {
         return <h1>Loading...</h1>
     }
+
     if (error || error1 || error2 || error3) {
         errorElement = <p>
             {error?.message}
@@ -32,17 +42,19 @@ const Login = () => {
     }
 
     if (user || user1 || user2) {
-        console.log(user)
+        /* console.log(user)
         console.log(user1)
-        console.log(user2)
-        navigate('/')
+        console.log(user2) */
+        navigate(from, { replace: true });
     }
+
     const handleLoginFormSubmit = async event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         signInWithEmailAndPassword(email, password)
     }
+
     const resetPassword = async (event) => {
         const email = emailRef.current.value;
         if (email) {
@@ -52,6 +64,7 @@ const Login = () => {
             alert('Enter your mail address')
         }
     }
+
     return (
         <div className='w-100 position-relative'>
             <FormHeader></FormHeader>

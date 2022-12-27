@@ -4,8 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../images/logo-white.png';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const [signOut] = useSignOut(auth);
     const navigate = useNavigate();
     return (
         <div className='position-relative'>
@@ -24,8 +28,17 @@ const Header = () => {
                             <Nav.Link as={Link} to='/booking' className='nav-link text-white'>News</Nav.Link>
                             <Nav.Link as={Link} to='/details' className='text-white' href="#destination">Details</Nav.Link>
 
-                            <Nav.Link as={Link} to='/signup' className='nav-link text-white' >Register</Nav.Link>
-                            <button onClick={() => navigate('/login')} className='nav-btn'>Login</button>
+                            {user?.uid ? <div>
+                                <span><img src={user?.photoURL} alt="" /></span>
+                                <span className='fw-bolder text-info'> {user?.displayName}</span>
+                                <button className="ms-5 nav-btn" onClick={() => signOut()}> Signout</button>
+                            </div>
+                                :
+                                <div className='d-lg-flex justify-content-around'>
+                                    <Nav.Link as={Link} to='/signup' className='nav-link text-white me-5' >Register</Nav.Link>
+                                    <button onClick={() => navigate('/login')} className='nav-btn ms-4'>Login</button>
+                                </div>
+                            }
 
                         </Nav>
                     </Navbar.Collapse>
